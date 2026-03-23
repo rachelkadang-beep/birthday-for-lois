@@ -1,76 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Lois 💖</title>
-  <style>
-    body {
-      background: linear-gradient(to right, #ffd6e0, #ffe6f0);
-      font-family: "Comic Sans MS", cursive;
-      text-align: center;
-      padding-top: 80px;
-    }
-    h1 {
-      color: #ff4d6d;
-      font-size: 2.8em;
-    }
-    p {
-      font-size: 1.3em;
-      margin: 15px;
-    }
-    button {
-      padding: 12px 25px;
-      font-size: 1em;
-      border: none;
-      border-radius: 12px;
-      background: #ff4d6d;
-      color: white;
-      cursor: pointer;
-    }
-    #surprise {
-      display: none;
-      margin-top: 25px;
-      font-size: 1.4em;
-      color: #ff1a4d;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>For Lois 💖</title>
+
+<style>
+body {
+  background: #ffe6f0;
+  font-family: "Times New Roman", serif;
+  text-align: center;
+  padding-top: 100px;
+}
+
+#page2, #page3, #page4 {
+  display: none;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+h1 {
+  color: #d6336c;
+}
+
+p {
+  font-size: 1.2em;
+}
+</style>
+
 </head>
 <body>
 
+<!-- PASSWORD PAGE -->
+<div id="page1">
+  <h1>🔒 Akses khusus buat kamu 😏</h1>
+  <p>Coba masukin sesuatu yang penting buat kita 💭</p>
+  <input type="password" id="pass">
+  <br>
+  <button onclick="checkPass()">Masuk 💖</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2">
+  <h1>😳 Wah bener dong...</h1>
+  <p>Kamu emang paling ngerti aku 😌</p>
+  <button onclick="nextPage(2)">Lanjut ya 💕</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3">
+  <h1>😏 Siap ya...</h1>
+  <p>Ini spesial banget loh buat kamu</p>
+  <button onclick="nextPage(3)">Klik lagi 💖</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div id="page4">
   <h1>🎂 Happy Birthday, Lois 💖</h1>
 
   <p>
-    Selamat ulang tahun ya sayangkuuu 😚💕  
-  </p>
-
-  <p>
+    Selamat ulang tahun ya, sayangku 💕  
     Semoga panjang umur, sehat selalu,  
-    rezekinya lancar, dan… makin cinta sama aku
+    dan semua hal baik selalu datang ke kamu
   </p>
 
   <p>
-    Makasih ya udah jadi pacar aku yang paling ganteng  
-    (walaupun kadang nyebelin dikit sih 😒)
+    Terima kasih sudah hadir di hidup aku,  
+    jadi orang yang selalu aku tunggu setiap hari 😭❤️
   </p>
 
   <p>
-    Tapi gapapa, soalnya aku tetep sayang banget 😭❤️  
+    Walaupun kamu kadang ngeselin…  
+    tapi tetap jadi orang paling aku sayang 😌
   </p>
 
-  <button onclick="showMessage()">Pencet ini kalo kamu sayang aku 😳</button>
+  <p>
+    Aku sayang kamu, lebih dari kata-kata ini bisa jelasin 💖
+  </p>
 
-  <div id="surprise">
-    💖 HEHE KETAUAN 💖 <br><br>
-    Aku juga sayang kamu bangettt 🥺💕<br><br>
-    Jangan kemana-mana ya…<br>
-    soalnya aku udah nyaman banget sama kamu 😭❤️
-  </div>
+  <h2>💖 I LOVE YOU 💖</h2>
+</div>
 
-  <script>
-    function showMessage() {
-      document.getElementById("surprise").style.display = "block";
-    }
-  </script>
+<script>
+function checkPass() {
+  var password = document.getElementById("pass").value;
+  if(password === "1028") {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+  } else {
+    document.getElementById("error").innerText = "Salah 😝 coba lagi!";
+  }
+}
+
+function nextPage(page) {
+  document.getElementById("page" + page).style.display = "none";
+  document.getElementById("page" + (page + 1)).style.display = "block";
+}
+</script>
 
 </body>
 </html>
